@@ -9,14 +9,17 @@
     <fileSets>
         <fileSet>
             <outputDirectory>info/furbach/keycloak/provider</outputDirectory>
-            <directory>${basedir}/src/module</directory>
-        </fileSet>
-        <fileSet>
-            <outputDirectory>info/furbach/keycloak/provider</outputDirectory>
             <directory>${basedir}/target</directory>
             <includes>
                 <include>${project.build.finalName}.jar</include>
             </includes>
         </fileSet>
     </fileSets>
+    <files>
+        <file>
+            <source>${basedir}/src/module/module.xml</source>
+            <outputDirectory>info/furbach/keycloak/provider</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+    </files>
 </assembly>
