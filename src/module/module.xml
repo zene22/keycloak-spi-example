@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module xmlns="urn:jboss:module:1.3" name="info.furbach.keycloak.provider" slot="main">
+    <resources>
+        <resource-root path="${project.build.finalName}.jar"/>
+    </resources>
+    <dependencies>
+        <module name="org.keycloak.keycloak-server-spi" services="import"/>
+        <module name="org.keycloak.keycloak-server-spi-private" services="import"/>
+        <module name="org.keycloak.keycloak-core"/>
+        <module name="org.jboss.resteasy.resteasy-jaxrs"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+</module>
