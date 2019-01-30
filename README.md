@@ -47,7 +47,7 @@ you have to add the SPI in the subsystem keycloak-server:
 You can check the configuration of the SPI in the list of providers in the server-info page of
 your keycloak administration console. 
 
-![alt text](2019-01-30 11_36_12-Keycloak Admin Console.png "relevant part of the SPI list")
+![alt text](Keycloak-Admin-Console.png "relevant part of the SPI list")
 
 
 ## Using the SPI
