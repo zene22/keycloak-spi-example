@@ -5,31 +5,30 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.furbach</groupId>
-    <artifactId>spi-keycloak</artifactId>
-    <version>1.0</version>
+    <artifactId>spi-keycloak-emailnotification</artifactId>
+    <version>1.0.1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <version.org.keycloak>3.4.0.Final</version.org.keycloak>
-        <version.org.jboss.logging>3.3.0.Final</version.org.jboss.logging>
+        <maven.compiler.release>11</maven.compiler.release>
+        <version.org.keycloak>16.0.0</version.org.keycloak>
+        <version.org.jboss.logging>3.4.1.Final</version.org.jboss.logging>
     </properties>
 
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-compiler-plugin</artifactId>
+                 <version>3.8.0</version>
+                 <configuration>
+                     <release>11</release>
+                 </configuration>
             </plugin>
 
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.3.0</version>
                 <configuration>
                     <descriptors>
                         <descriptor>src/assembly/assemblyModule.xml</descriptor>
