@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "embed-server --server-config=standalone-ha.xml --std-out=echo" > /tmp/configure-provider.cli
+echo "/subsystem=keycloak-server/spi=form-action/:add" >> /tmp/configure-provider.cli
+echo "/subsystem=keycloak-server/spi=form-action/provider=registration-admin-email-action/:add(enabled=true)" >> /tmp/configure-provider.cli
+echo "/subsystem=keycloak-server/spi=form-action/provider=registration-admin-email-action/:map-put(name=properties,key=emailAdmin,value=${ADMIN_EMAIL})" >> /tmp/configure-provider.cli
+echo "stop-embedded-server" >> /tmp/configure-provider.cli
+
+${JBOSS_HOME}/bin/jboss-cli.sh --file=/tmp/configure-provider.cli
+

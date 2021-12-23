@@ -1,0 +1,24 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: mykeycloak
+spec:
+  extensions:
+  - https://github.com/zene22/keycloak-spi-example/releases/download/V1.0.1/spi-keycloak-emailnotification-1.0.1.jar
+  externalAccess:
+    enabled: true
+  instances: 1
+  keycloakDeploymentSpec:
+    experimental:
+      env:
+      - name: ADMIN_EMAIL
+        value: xxx@xxx.xxx
+      volumes:
+        defaultMode: 493
+        items:
+        - configMaps:
+          - cli-script
+          mountPath: /opt/jboss/startup-scripts
+          name: cli-script
+  podDisruptionBudget:
+    enabled: true
