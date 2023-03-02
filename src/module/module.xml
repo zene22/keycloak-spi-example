@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module xmlns="urn:jboss:module:1.3" name="info.furbach.keycloak.provider" slot="main">
+<module xmlns="urn:jboss:module:1.3" name="md.alejandro.vault.azurekeyvault" slot="main">
     <resources>
         <resource-root path="${project.build.finalName}.jar"/>
     </resources>
@@ -9,5 +9,6 @@
         <module name="org.keycloak.keycloak-core"/>
         <module name="org.jboss.resteasy.resteasy-jaxrs"/>
         <module name="org.jboss.logging"/>
+        <module name="com.azure"/>
     </dependencies>
 </module>

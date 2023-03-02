@@ -8,7 +8,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <outputDirectory>info/furbach/keycloak/provider</outputDirectory>
+            <outputDirectory>md/alejandro/vault/azurekeyvault</outputDirectory>
             <directory>${basedir}/target</directory>
             <includes>
                 <include>${project.build.finalName}.jar</include>
@@ -18,7 +18,7 @@
     <files>
         <file>
             <source>${basedir}/src/module/module.xml</source>
-            <outputDirectory>info/furbach/keycloak/provider</outputDirectory>
+            <outputDirectory>md/alejandro/vault/azurekeyvault</outputDirectory>
             <filtered>true</filtered>
         </file>
     </files>
