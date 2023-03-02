@@ -11,22 +11,21 @@ import org.keycloak.vault.VaultProviderFactory;
 
 public class AzureKeyVaultProviderFactory implements VaultProviderFactory {
     private String keyVaultName;
+    private SecretClient secretClient;
 
     @Override
     public VaultProvider create(KeycloakSession keycloakSession) {
-
-        String keyVaultUri = "https://" + this.keyVaultName + ".vault.azure.net";
-        SecretClient secretClient = new SecretClientBuilder()
-                .vaultUrl(keyVaultUri)
-                .credential(new DefaultAzureCredentialBuilder().build())
-                .buildClient();
-
         return new AzureKeyVaultProvider(secretClient, keycloakSession.getContext().getRealm().getName());
     }
 
     @Override
     public void init(Config.Scope scope) {
         this.keyVaultName = scope.get("name");
+        String keyVaultUri = "https://" + this.keyVaultName + ".vault.azure.net";
+        this.secretClient = new SecretClientBuilder()
+                .vaultUrl(keyVaultUri)
+                .credential(new DefaultAzureCredentialBuilder().build())
+                .buildClient();
     }
 
     @Override
@@ -35,7 +34,6 @@ public class AzureKeyVaultProviderFactory implements VaultProviderFactory {
 
     @Override
     public void close() {
-
     }
 
     @Override
